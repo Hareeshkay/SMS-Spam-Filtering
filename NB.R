@@ -17,14 +17,13 @@ corpus_clean<-tm_map(corpus_clean,removeWords, stopwords())
 corpus_clean<-tm_map(corpus_clean,removePunctuation)
 corpus_clean<-tm_map(corpus_clean,stripWhitespace)
 class(corpus_clean)
-# Do not run the plainTextDocument
-# corpus_clean <- tm_map(corpus_clean, PlainTextDocument)
+
 as.character(corpus_clean)
 # create a document-term sparse matrix
-#corpus_clean<-Corpus(VectorSource(corpus_clean))
+
 sms_dtm <- DocumentTermMatrix(corpus_clean) 
 class(sms_dtm)
-# if code at 25 shows any error run the code at line 24 first and proceed
+
 as.character(sms_dtm)
 # creating training and test datasets
 sms_raw_train <- sms_data[1:4169, ]
